@@ -1,0 +1,100 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "montserrat", "arial", sans-serif;
+  color: #515076;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.title {
+  text-align: center;
+  font-size: 70px;
+  line-height: 78px;
+  margin-top: 220px;
+  margin-bottom: 119px;
+  margin-left: 217px;
+  margin-right: 217px;
+}
+
+/*Не смог правильно прикрепить фоновые одуванчики. Не отображается за пределами тега*/
+.product-container {
+  background-image: url("images/background-wallpaper.png");
+  background-position: 45% 0%;
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-attachment: fixed;
+}
+
+.product-list {
+  width: 1110px;
+  height: 1191px;
+  margin-bottom: 116px;
+  margin-right: 85px;
+  margin-left: 85px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 45px;
+}
+
+.product-card-container {
+  list-style-type: none;
+  width: 340px;
+  height: 573px;
+  padding: 25px;
+  background-color: #F7F7FA;
+  box-shadow: 2px 2px 10px 0px #5150761A;
+}
+
+.product-category {
+  color: #A5A3B9;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 5px;
+}
+
+.product-description {
+  margin-bottom: 15px;
+}
+
+.product-composition {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  margin-left: 19px;
+  list-style-type: circle;
+}
+
+li::marker {
+  font-size: large;
+}
+
+.product-price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-price-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.product-price-number {
+  font-size: 20px;
+  line-height: 24px;
+}
