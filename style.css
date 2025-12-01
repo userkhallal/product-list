@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -9,6 +9,22 @@
   line-height: 18px;
 }
 
+.bg-container {
+  position: relative;
+  min-height: 1500px;
+}
+
+.bg-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/bg-dandelion.png");
+  background-position: 45% -30%;
+  background-repeat: no-repeat;
+  background-size: 25%;
+  z-index: -1;
+}
+
 .title {
   text-align: center;
   font-size: 70px;
@@ -17,15 +33,6 @@
   margin-bottom: 119px;
   margin-left: 217px;
   margin-right: 217px;
-}
-
-/*Не смог правильно прикрепить фоновые одуванчики. Не отображается за пределами тега*/
-.product-container {
-  background-image: url("images/background-wallpaper.png");
-  background-position: 45% 0%;
-  background-repeat: no-repeat;
-  background-size: 25%;
-  background-attachment: fixed;
 }
 
 .product-list {
@@ -94,7 +101,7 @@ li::marker {
   line-height: 24px;
 }
 
-.product-price-number {
+.product-price {
   font-size: 20px;
   line-height: 24px;
 }
