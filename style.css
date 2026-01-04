@@ -11,7 +11,7 @@
 
 .bg-container {
   position: relative;
-  min-height: 1500px;
+  height: 1800px;
 }
 
 .bg-container::before {
@@ -19,7 +19,7 @@
   position: absolute;
   inset: 0;
   background-image: url("images/bg-dandelion.png");
-  background-position: 45% -30%;
+  background-position: 45% 0%;
   background-repeat: no-repeat;
   background-size: 25%;
   z-index: -1;
@@ -29,7 +29,7 @@
   text-align: center;
   font-size: 70px;
   line-height: 78px;
-  margin-top: 220px;
+  padding-top: 260px;
   margin-bottom: 119px;
   margin-left: 217px;
   margin-right: 217px;
