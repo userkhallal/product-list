@@ -1,6 +1,3 @@
-
-
-
 // Покраска первой карточки
 
 const firstProductCard = document.querySelector('.product-card-container');
