@@ -1,3 +1,8 @@
+
+
+
+// Покраска первой карточки
+
 const firstProductCard = document.querySelector('.product-card-container');
 const changeFirstCardColorButton = document.querySelector('#change-first-card-color-button');
 
@@ -6,17 +11,20 @@ changeFirstCardColorButton.addEventListener('click', () => {
 })
 
 
+// Покраска всех карточек
 
 const productCards = document.querySelectorAll('.product-card-container');
 const changeAllCardsColorButton  = document.querySelector('#change-all-cards-color-button');
 const greenColorHash = '#00FF00'
 const blueColorHash = '#0000FF'
+const orangeColorHash = '#FFA500'
 
 changeAllCardsColorButton.addEventListener('click', () => {
   productCards.forEach((card) => card.style.backgroundColor = greenColorHash)
 })
 
 
+// Открыть Google
 
 const openGoogleButton = document.querySelector('#open-google');
 
@@ -33,6 +41,7 @@ function openGoogle() {
 }
 
 
+// Вывод консоль лог
 
 const outputLogButton = document.querySelector('#output-console-log');
 
@@ -41,4 +50,25 @@ outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
 function outputConsoleLog(message) {
   alert(message)
   console.log(message)
+}
+
+
+// Вывод в консоль заголовка
+
+const outputConsoleTitle = document.querySelector('.title');
+
+outputConsoleTitle.addEventListener('mouseover', () => {
+  console.log(outputConsoleTitle.textContent)
+})
+
+
+// Смена цветов карточки одной кнопкой
+
+const secondProductCard = productCards[1];
+const changeSecondCardColor = document.querySelector('#change-second-card-color-button');
+
+if (changeSecondCardColor && secondProductCard) {
+  changeSecondCardColor.addEventListener('click', () => {
+    secondProductCard.classList.toggle('is-highlighted')
+  })
 }
