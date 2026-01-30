@@ -14,7 +14,6 @@ const productCards = document.querySelectorAll('.product-card-container');
 const allCardsChangeColorButton  = document.querySelector('#change-all-cards-color-button');
 const greenColorHash = '#00FF00'
 const blueColorHash = '#0000FF'
-const orangeColorHash = '#FFA500'
 
 allCardsChangeColorButton.addEventListener('click', () => {
   productCards.forEach((card) => card.style.backgroundColor = greenColorHash)
