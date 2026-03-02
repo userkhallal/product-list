@@ -1,70 +1,67 @@
-// Покраска первой карточки
+/*3. Создать функцию, которая принимает 2 параметра:
+город и температуру и выводит сообщение в консоль "Сейчас в X температура  — Y градусов по Цельсию"*/
 
-const firstProductCard = document.querySelector('.product-card-container');
-const firstCardChangeColorButton = document.querySelector('#change-first-card-color-button');
+const showTemp = (city, temp) => {
+  console.log(`Сейчас в ${city} температура — ${temp} градусов по Цельсию`)
+}
 
-firstCardChangeColorButton.addEventListener('click', () => {
-  firstProductCard.style.backgroundColor = blueColorHash;
-})
-
-
-// Покраска всех карточек
-
-const productCards = document.querySelectorAll('.product-card-container');
-const allCardsChangeColorButton  = document.querySelector('#change-all-cards-color-button');
-const greenColorHash = '#00FF00'
-const blueColorHash = '#0000FF'
-
-allCardsChangeColorButton.addEventListener('click', () => {
-  productCards.forEach((card) => card.style.backgroundColor = greenColorHash)
-})
+showTemp('Медина', 30)
 
 
-// Открыть Google
 
-const buttonOpenGoogle = document.querySelector('#open-google');
+/*4. Создать переменную, которая хранит внутри себя скорость света (гуглим).
+Создать функцию, которая принимает 1 аргумент - скорость,
+внутри функции происходит проверка:
+если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость",
+если ниже — "Субсветовая  скорость",
+если равна — "Скорость света".*/
 
-buttonOpenGoogle.addEventListener('click', openGoogle)
+const LIGHT_SPEED = 299792
 
-function openGoogle() {
-  const answer = confirm('Вы действительно хотите открыть Google?');
-
-  if (answer) {
-    window.open('https://google.com')
+function compareSpeed(speed) {
+  if (speed > LIGHT_SPEED) {
+    console.log('Сверхсветовая скорость')
+  } else if (speed === LIGHT_SPEED) {
+    console.log('Скорость света')
   } else {
-    return;
+    console.log('Субсветовая скорость')
   }
 }
 
+compareSpeed(299792)
 
-// Вывод консоль лог
 
-const buttonOutputLog = document.querySelector('#output-console-log');
 
-buttonOutputLog.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
+/*5. Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение).
+Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка:
+если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!",
+если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".
+То-есть с помощью функции мы пытаемся приобрести товар.*/
 
-function outputConsoleLog(message) {
-  alert(message)
-  console.log(message)
+const product = 'Книга'
+const productPrice = 10
+
+function buyProduct(budget) {
+  if (budget >= productPrice)
+    return console.log(`${product} приобретена. Спасибо за покупку!`)
+  if (budget < productPrice)
+    return console.log(`Вам не хватает ${2}$, пополните баланс`)
 }
 
-
-// Вывод в консоль заголовка
-
-const titleOutputConsole = document.querySelector('.title');
-
-titleOutputConsole.addEventListener('mouseover', () => {
-  console.log(titleOutputConsole.textContent)
-})
+buyProduct(8)
 
 
-// Смена цветов карточки одной кнопкой
 
-const secondProductCard = productCards[1];
-const secondCardToggleColor = document.querySelector('#change-second-card-color-button');
+//6. Создать 1 функцию и именовать её по своему усмотрению
 
-if (secondCardToggleColor && secondProductCard) {
-  secondCardToggleColor.addEventListener('click', () => {
-    secondProductCard.classList.toggle('is-highlighted')
-  })
-}
+const showInfo = (century) => console.log(`Сейчас ${century} век.`)
+
+showInfo(21)
+
+
+
+//7. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
+
+const presidentOfRussia = 'Владимир Владимирович Путин'
+let skyColor = 'Голубой'
+var months = '12'
