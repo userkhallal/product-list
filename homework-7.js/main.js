@@ -1,10 +1,16 @@
+import { socialMediaComments } from './comments.js';
+
+console.log(socialMediaComments);
+
+
+
 /*2. Создать массив чисел от 1 до 10.
 Отфильтровать его таким образом,
 что бы мы получил массив чисел, начиная с 5.*/
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const newNumbers = numbers.slice(4);
+const newNumbers = numbers.filter(number => number > 4);
 
 console.log(newNumbers);
 
@@ -14,11 +20,11 @@ console.log(newNumbers);
 (название фильмов/книг, кухонные приборы, мебель и т.д.),
 проверить, есть ли в массиве какая-то определенная сущность.*/
 
-const things = ['laptop', 'fork', 'cup', 'notebook', 'carpet', 'hotkey'];
+const officeItems = ['laptop', 'fork', 'cup', 'notebook', 'carpet', 'hotkey'];
 
-const newThings = things.find(thing => thing === 'fork');
+const newOfficeItems = officeItems.find(item => item === 'fork');
 
-console.log(newThings);
+console.log(newOfficeItems);
 
 
 
@@ -26,24 +32,13 @@ console.log(newThings);
 и изменять его порядок на противоположный ("переворачивать").
 Два вышеуказанных массива с помощью этой функции перевернуть.*/
 
-const reverseArray = array => {return array.reverse()};
+const reverseArray = array => {
+  return array.reverse();
+};
 
 console.log(reverseArray(numbers));
 
-console.log(reverseArray(things));
-
-
-
-/*6. Сделать константу экспортируемой,
-добавив перед "const" ключевое слово "export".
-Таким образом мы сможем внедрить переменную
-из comments.js в homework-7.js и работать с ней.
-Когда мы введем название переменной,
-нам предложит импортировать ее - так и делаем.*/
-
-import { socialMediaComments } from './comments.js';
-
-console.log(socialMediaComments);
+console.log(reverseArray(officeItems));
 
 
 
@@ -69,12 +64,12 @@ console.log(updatedPostIds);
 /*9. Перебрать массив, что бы объекты
 состояли только из айди и имени*/
 
-const usersIdsAndNames = socialMediaComments.map(user => ({
+const commentNames = socialMediaComments.map(user => ({
   id: user.id,
   name: user.name
 }));
 
-console.log(usersIdsAndNames);
+console.log(commentNames);
 
 
 
@@ -83,9 +78,9 @@ console.log(usersIdsAndNames);
 если длина тела сообщения (body) больше 180 символов -
 устанавливаем true, меньше - false.*/
 
-const addValueIsInvalid = socialMediaComments.map(user => ({ ...user, isInvalid: user.body.length > 180}));
+const validatedComments = socialMediaComments.map(user => ({ ...user, isInvalid: user.body.length > 180}));
 
-console.log(addValueIsInvalid);
+console.log(validatedComments);
 
 
 
@@ -93,28 +88,28 @@ console.log(addValueIsInvalid);
 Используя его, вывести массив почт
 и провернуть тоже самое с помощью метода map*/
 
-const usersEmails = socialMediaComments.reduce((acc, user) => {
+const commentEmailsByReduce = socialMediaComments.reduce((acc, user) => {
   acc.push(user.email);
   return acc;
 }, []);
 
-console.log(usersEmails);
+console.log(commentEmailsByReduce);
 
 
-const usersEmails2 = socialMediaComments.map(user => ({
+const commentEmailsByMap = socialMediaComments.map(user => ({
   email: user.email
 }));
 
-console.log(usersEmails2);
+console.log(commentEmailsByMap);
 
 
 
 /*12. Почитать про методы toString(), join()
 и перебрав массив с задания №11, привести его к строке.*/
 
-console.log(usersEmails.toString());
+console.log(commentEmailsByReduce.toString());
 
 
-const usersEmailsStr = usersEmails.join();
+const commentEmailsToString = commentEmailsByReduce.join();
 
-console.log(usersEmailsStr);
+console.log(commentEmailsToString);
